@@ -1,4 +1,5 @@
 
+import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 
@@ -22,12 +23,14 @@ public class upgrade {
     //Trying out swing for the shop
     public void displayShop() {
         JFrame frame = new JFrame("displayShop");
+        frame.setSize(1080, 720);
+        //layout
+        FlowLayout experimentLayout = new FlowLayout();
+        frame.setLayout(experimentLayout);
+
         JLabel item1 = new JLabel("ITEM1");
         frame.add(item1);
+
         frame.setVisible(true);
     }
-         }  
-                 
-
-    
-           
+}
