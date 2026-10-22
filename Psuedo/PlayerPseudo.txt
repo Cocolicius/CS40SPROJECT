@@ -1,0 +1,6 @@
+Player(class){
+    Desc: Player class must contain the current clicker state of the player Keeping track of points, total points ever gained. And having a valid spend() method.
+    - spend with check if cost is valid for an upgrade, then purchase it and subtract the cost.
+    - getters to recieve current state.
+    
+}
