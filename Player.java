@@ -1,10 +1,10 @@
 
 public class Player{
 
-    private int points;
-    private double clickBonus;
-    private String clickPower;
-    private int totalAccum;
+    private int points = 0;
+    private double clickBonus = 10.0;
+    private String clickPower = "";
+    private int totalAccum = 0;
 
     //Deducts total points.
     public boolean spend(final int cost){
