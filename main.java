@@ -11,11 +11,8 @@ public class main {
         Upgrade g1 = new Upgrade();
         g1.displayShop();
 
-
         //testing objects for achievement
         //Achievement first = new Achievement("Starter", 1, 2);
         //first.addReward();
-        
-
     }
 }

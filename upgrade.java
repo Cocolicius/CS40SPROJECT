@@ -1,6 +1,5 @@
 
 import java.awt.*;
-import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
@@ -31,19 +30,29 @@ public class Upgrade {
 
         JButton button1 = new JButton("Button");
         frame.add(button1);
-        button1.JButton button2 = new JButton("Button");
+        // button1.addActionListener(this);
+        // button1.
+        JButton button2 = new JButton("Button");
         frame.add(button2);
+        // button2.addActionListener(this);
 
         frame.setBounds(200, 100, 600, 400);
         frame.setVisible(true);
+        // button1.addActionListener((ActionEvent event) -> {
+        //     System.out.println("Clicked1");
+        // });
 
-        button1.addActionListener((ActionEvent event) -> {
-            System.out.println("Clicked1");
-        });
-
-        button2.addActionListener((ActionEvent event) -> {
-            System.out.println("Clicked2");
-        });
-
+        // button2.addActionListener((ActionEvent event) -> {
+        //     System.out.println("Clicked2");
+        // });
+        // public void actionPerformed(ActionEvent e) {
+        //     if (e.getSource() == button1) {
+        //         frame.getContentPane().setBackground(new Color(255, 0, 0));
+        //     } else {
+        //         (e.getSource() == button2)
+        //     }{
+        //         frame.getContentPane().setBackground(new Color(0, 255, 0));
+        //     }
+        // }
     }
 }
