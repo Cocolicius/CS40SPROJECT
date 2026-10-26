@@ -25,4 +25,6 @@ public class Player{
         points += clickBonus;
         totalAccum += clickBonus;
     }
+    @Override
+    public String toString(){return "Points: " + points + "ClickBonus: " + clickBonus + "ClickPower: " + clickPower + "Point Memory: " + totalAccum;}
 }
