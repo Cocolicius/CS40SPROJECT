@@ -41,6 +41,7 @@ public class Achievement{
     }
 
     @Override
+
     public String toString(){
         return "Title: "+ achievement + "unlocked." + reward + " points added";
     }
@@ -51,12 +52,10 @@ public class Achievement{
  * after reaching a certain 
  * amount of clicks
  */
-    public void showAchievement(){
-        JOptionPane.showMessageDialog(null, "You have achieved the title of:");
-        JOptionPane.showConfirmDialog(null, achievement);
+    // public void showAchievement(){
+    
 
 
-
-    }
+    // }
 
 }
