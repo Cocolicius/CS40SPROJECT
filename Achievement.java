@@ -1,7 +1,7 @@
 public class Achievement{
     private String achievement;
     private int reward;
-    private int requirement;
+    private final int requirement;
     private boolean unlocked;
 
 
@@ -18,16 +18,18 @@ public class Achievement{
  * the requirement
  */
     public boolean unlockAchievement(int points){
-         return unlocked = points>=requirement;
-
+         if(!unlocked){
+            return unlocked = points>=requirement;
+         }
+         
     }
 
 /**Reward is adding extra points for certain
- * achievments
+ * achievements
  * adds a specific amount if
  * unlocked is true
  */
-    public int displayReward(){
+    public int addReward(){
         if(unlocked){
             return reward;
         }
