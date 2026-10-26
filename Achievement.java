@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Achievement{
     private String achievement;
     private int reward;
@@ -38,12 +40,22 @@ public class Achievement{
         }
     }
 
+    @Override
+    public String toString(){
+        return "Title: "+ achievement + "unlocked." + reward + " points added";
+    }
+
+
+
 /** Displays the title/achievement you get
  * after reaching a certain 
  * amount of clicks
  */
-
     public void showAchievement(){
+        JOptionPane.showMessageDialog(null, "You have achieved the title of:");
+        JOptionPane.showConfirmDialog(null, achievement);
+
+
 
     }
 
