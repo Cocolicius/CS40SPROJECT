@@ -4,3 +4,8 @@ Player(class){
     - getters to recieve current state.
     
 }
+
+Upgrade(class){
+    Desc: multipliers and increase in points per click
+     - check if points are enough
+}
