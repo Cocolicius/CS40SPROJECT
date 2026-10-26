@@ -13,6 +13,8 @@ public class main {
 
 
         //testing objects for achievement
+        //Achievement first = new Achievement("Starter", 1, 2);
+        //first.addReward();
         
 
     }
