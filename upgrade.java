@@ -31,16 +31,14 @@ public class Upgrade {
 
         JButton button1 = new JButton("Button");
         frame.add(button1);
-
-        JButton button2 = new JButton("Button");
+        button1.JButton button2 = new JButton("Button");
         frame.add(button2);
 
+        frame.setBounds(200, 100, 600, 400);
         frame.setVisible(true);
 
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                System.out.println("Clicked1");
-            }
+        button1.addActionListener((ActionEvent event) -> {
+            System.out.println("Clicked1");
         });
 
         button2.addActionListener((ActionEvent event) -> {
