@@ -8,7 +8,7 @@ public class main {
     public static void main(String[] args) {
 
         //testing the display shop
-        upgrade g1 = new upgrade();
+        Upgrade g1 = new Upgrade();
         g1.displayShop();
     }
 }

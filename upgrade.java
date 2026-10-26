@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-public class upgrade {
+public class Upgrade {
 
     private double cost = 10;
     private int powerIncrease;
