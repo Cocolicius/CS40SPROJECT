@@ -43,10 +43,8 @@ public class Upgrade {
             }
         });
 
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                System.out.println("Clicked2");
-            }
+        button2.addActionListener((ActionEvent event) -> {
+            System.out.println("Clicked2");
         });
 
     }
