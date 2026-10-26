@@ -1,5 +1,6 @@
 
 import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
@@ -28,8 +29,17 @@ public class upgrade {
         FlowLayout experimentLayout = new FlowLayout();
         frame.setLayout(experimentLayout);
 
-        JLabel item1 = new JLabel("ITEM1");
-        frame.add(item1);
+        JButton button1 = new JButton("Button");
+        frame.add(button1);
+
+        JButton button2 = new JButton("Button");
+        frame.add(button2);
+
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                System.out.println("Clicked");
+            }
+        });
 
         frame.setVisible(true);
     }
