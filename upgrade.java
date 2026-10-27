@@ -1,23 +1,24 @@
 
 import java.awt.*;
-import java.util.*;
 import javax.swing.*;
 
 public class Upgrade {
 
     private double cost = 10;
-    private int powerIncrease;
-    private int level;
-    Scanner in = new Scanner(System.in);
+    private double powerIncrease = 10;
+    private int level = 1;
 
     //buy a multiplicative upgrade
-    public Boolean buyUpgrade(int points) {
-        if (points < cost) {
-            return false;
-        } else {
-            cost *= 1.5;
-            return true;
+    public boolean buyUpgrade(Player player) {
+
+        boolean status = false;
+        if (player.getPoints() <= cost){
+            player.upgradeBonus(powerIncrease);
+            status = player.spend(cost);
+            level++;
+            cost *= level;
         }
+        return status;
     }
 
     //Trying out swing for the shop
