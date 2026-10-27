@@ -9,6 +9,7 @@ public class main {
 
         //testing the display shop
         Upgrade g1 = new Upgrade();
+        //ss
 
         //testing objects for achievement
         //Achievement first = new Achievement("Starter", 1, 2);
