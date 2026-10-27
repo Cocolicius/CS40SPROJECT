@@ -48,7 +48,7 @@ public class Achievement{
 
 
 
-/** Displays the title/achievement you get
+/** Displays the title/achievement you getl
  * after reaching a certain 
  * amount of clicks
  */
