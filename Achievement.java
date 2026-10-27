@@ -1,18 +1,19 @@
-import javax.swing.JOptionPane;
 
 public class Achievement{
     private String achievement;
     private int reward;
-    private final int requirement;
+    private int requirement;
     private boolean unlocked;
+    private boolean rewardClaimed; //makes sure reward is not claimed multiple times
 
 
-
+//*initializes variables and unlocked as false (not unlocked)
     public Achievement(String a, int required, int r){
         achievement = a;
         requirement = required;
         reward = r;
         unlocked = false;
+        rewardClaimed = false;
     }
 
 /**achievement initially locked and unlocks
@@ -23,6 +24,9 @@ public class Achievement{
          if(!unlocked){
             return unlocked = points>=requirement;
          }
+         else{
+            return false;
+         }
          
     }
 
@@ -32,30 +36,28 @@ public class Achievement{
  * unlocked is true
  */
     public int addReward(){
-        if(unlocked){
-            return reward;
+        if(unlocked && !rewardClaimed){
+            rewardClaimed = true;
+            return reward;       
         }
         else{
             return 0;
         }
     }
 
-    @Override
 
+    @Override
     public String toString(){
-        return "Title: "+ achievement + "unlocked." + reward + " points added";
+        if(unlocked){
+            return "Title: "+ achievement + " unlocked." + reward + " points added";
+        }
+        else{
+            return "Title: "+ achievement + " locked.";
+        }
+        
     }
 
-
-
-/** Displays the title/achievement you get
- * after reaching a certain 
- * amount of clicks
- */
-    // public void showAchievement(){
     
 
-
-    // }
 
 }
