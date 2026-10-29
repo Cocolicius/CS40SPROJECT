@@ -16,5 +16,17 @@ public class main {
         //testing objects for achievement
         //Achievement first = new Achievement("Starter", 1, 2);
         //first.addReward();
+        JFrame frame =  new JFrame();
+        JButton clickBtn=  new JButton("Click");
+        int points = 0;
+
+        while(true){
+            clickBtn.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent event){
+                    points+=1;
+                    System.out.println(points);
+                }
+            })
+        }
     }
 }
