@@ -1,13 +1,13 @@
 
 public class Player{
 
-    private int points = 0;
+    private double points = 0;
     private double clickBonus = 10.0;
     private String clickPower = "";
-    private int totalAccum = 0;
+    private double totalAccum = 0;
 
     //Deducts total points.
-    public boolean spend(final int cost){
+    public boolean spend(final double cost){
 
         if (cost <= points){
             points -= cost;
@@ -15,6 +15,7 @@ public class Player{
         }
         return false;
     }
+    public void upgradeBonus(final double multiplier){clickBonus *= multiplier;}
     public void upgradePower(String power){clickPower = power;}
     public double getPoints(){return points;}
     //Gets total points ever accumulated.

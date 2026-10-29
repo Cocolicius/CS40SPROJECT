@@ -4,7 +4,7 @@ public class Achievement{
     private int reward;
     private int requirement;
     private boolean unlocked;
-    private boolean rewardClaimed; //makes sure reward is not claimed multiple times
+    private boolean rewardClaimed;
 
 
 //*initializes variables and unlocked as false (not unlocked)
@@ -36,10 +36,10 @@ public class Achievement{
  * adds a specific amount if
  * unlocked is true
  */
-    public int addReward(boolean ul){
-        if(ul && !rewardClaimed){
+    public int addReward(){
+        if(unlocked){
             rewardClaimed = true;
-            return reward;       
+            return reward;
         }
         else{
             return 0;
@@ -49,16 +49,13 @@ public class Achievement{
 
     @Override
     public String toString(){
-        if(unlocked){
+       if(unlocked){
             return "Title: "+ achievement + " unlocked." + reward + " points added";
         }
         else{
             return "Title: "+ achievement + " locked.";
         }
-        
     }
-
-    
 
 
 }
