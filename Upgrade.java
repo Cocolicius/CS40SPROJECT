@@ -1,22 +1,19 @@
+
 public class Upgrade {
 
-    private double cost = 10;
-    private double powerIncrease = 5;
-    private int level = 1;
+    private double cost = 100;
+    private int powerIncrease;
+    private final double level = 1.5;
 
     //buy a multiplicative upgrade
-    public boolean buyUpgrade(Player player) {
-
-        boolean status = false;
-        if (player.getPoints() >= cost){
+    public Boolean buyUpgrade(Player player) {
+        if (player.spend(cost)){
+            cost *= 1.5;
             player.upgradeBonus(powerIncrease);
-            status = player.spend(cost);
-            level++;
-            cost *= level;
+            return true;
         }
-        return status;
+        return false;
     }
     public double getCost(){return cost;}
-    public double getPowerIncrease(){return powerIncrease;}
-    public int getLevel(){return level;}
+    public int getNextIncrease(){return powerIncrease;}
 }
