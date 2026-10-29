@@ -2,12 +2,12 @@
 public class Achievement{
     private String achievement;
     private int reward;
-    private final int requirement;
+    private int requirement;
     private boolean unlocked;
     private boolean rewardClaimed;
 
 
-
+//*initializes variables and unlocked as false (not unlocked)
     public Achievement(String a, int required, int r){
         achievement = a;
         requirement = required;
@@ -22,6 +22,7 @@ public class Achievement{
  */
     public boolean unlockAchievement(int points){
          if(!unlocked){
+            unlocked = true;
             return unlocked = points>=requirement;
          }
          else{
@@ -36,7 +37,7 @@ public class Achievement{
  * unlocked is true
  */
     public int addReward(){
-        if(unlocked && !rewardClaimed){
+        if(unlocked){
             rewardClaimed = true;
             return reward;
         }
@@ -45,21 +46,16 @@ public class Achievement{
         }
     }
 
+
     @Override
     public String toString(){
-        return "Title: "+ achievement + "unlocked." + reward + " points added";
+       if(unlocked){
+            return "Title: "+ achievement + " unlocked." + reward + " points added";
+        }
+        else{
+            return "Title: "+ achievement + " locked.";
+        }
     }
 
-
-
-/** Displays the title/achievement you get
- * after reaching a certain 
- * amount of clicks
- */
-    // public void showAchievement(){
-    
-
-
-    // }
 
 }
