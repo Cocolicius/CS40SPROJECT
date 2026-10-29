@@ -9,7 +9,6 @@ public class main {
 
         //testing the display shop
         Upgrade g1 = new Upgrade();
-        g1.displayShop();
         Player player = new Player();
         player.click();
 
