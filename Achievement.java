@@ -22,6 +22,7 @@ public class Achievement{
  */
     public boolean unlockAchievement(int points){
          if(!unlocked){
+            unlocked = true;
             return unlocked = points>=requirement;
          }
          else{
@@ -35,8 +36,8 @@ public class Achievement{
  * adds a specific amount if
  * unlocked is true
  */
-    public int addReward(){
-        if(unlocked && !rewardClaimed){
+    public int addReward(boolean ul){
+        if(ul && !rewardClaimed){
             rewardClaimed = true;
             return reward;       
         }
