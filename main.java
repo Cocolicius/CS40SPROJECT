@@ -38,6 +38,9 @@ public class main {
         JLabel pointAmount = new JLabel("point");
         frame.add(pointAmount);
 
+        JLabel costAmount = new JLabel("");
+        frame.add(costAmount);
+
         frame.setSize(1280,720);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +60,7 @@ public class main {
             upgradeBtn.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent event){
                     g1.buyUpgrade(player);
+                    costAmount.setText("Upgrade cost: " + g1.getCost());
                     System.out.println("UPgrade");
                 }
             });
