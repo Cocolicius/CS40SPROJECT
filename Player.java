@@ -16,7 +16,7 @@ public class Player{
         return false;
     }
     public void upgradeBonus(final double multiplier){clickBonus *= multiplier;}
-    public void upgradePower(String power){clickPower = power;}
+    public void upgradePower(final String power){clickPower = power;}
     public double getPoints(){return points;}
     //Gets total points ever accumulated.
     public double getPointsMemory(){return totalAccum;}
