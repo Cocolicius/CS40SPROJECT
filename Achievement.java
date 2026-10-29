@@ -47,15 +47,19 @@ public class Achievement{
 
     @Override
     public String toString(){
-        if(unlocked){
-            return "Title: "+ achievement + "unlocked." + reward + " points added";
-        }
-        else{
-            return "Title: "+ achievement + " is locked.";
-        }
-        
+        return "Title: "+ achievement + "unlocked." + reward + " points added";
     }
 
 
+
+/** Displays the title/achievement you get
+ * after reaching a certain 
+ * amount of clicks
+ */
+    // public void showAchievement(){
+    
+
+
+    // }
 
 }
