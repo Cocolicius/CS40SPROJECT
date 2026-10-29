@@ -6,8 +6,6 @@ public class Achievement{
     private final int requirement;
     private boolean unlocked;
 
-
-
     public Achievement(String a, int required, int r){
         achievement = a;
         requirement = required;
@@ -39,16 +37,11 @@ public class Achievement{
             return 0;
         }
     }
-
     @Override
-
     public String toString(){
         return "Title: "+ achievement + "unlocked." + reward + " points added";
     }
-
-
-
-/** Displays the title/achievement you getl
+/** Displays the title/achievement you get
  * after reaching a certain 
  * amount of clicks
  */
