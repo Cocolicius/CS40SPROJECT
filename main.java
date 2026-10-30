@@ -19,10 +19,6 @@ public class main {
         Upgrade g1 = new Upgrade();
         Player player = new Player();
 
-        //testing objects for achievement
-        //Achievement first = new Achievement("Starter", 1, 2);
-        //first.addReward();
-
         //Jframe
         JFrame frame =  new JFrame();
         frame.setLayout(new FlowLayout());
@@ -34,7 +30,7 @@ public class main {
         //Upgrade button
         JButton upgradeBtn=  new JButton("Upgrade");
         frame.add(upgradeBtn);
-
+    
         //How many points the player has
         JLabel pointAmount = new JLabel("point");
         frame.add(pointAmount);
@@ -42,7 +38,7 @@ public class main {
         //Cost of Upgrade
         JLabel costAmount = new JLabel("");
         frame.add(costAmount);
-
+    
         //Multiplier
         JLabel multiplier = new JLabel("");
         frame.add(multiplier);
@@ -58,19 +54,19 @@ public class main {
         multiplier.setText("Points Per Click: "+ player.getClickBonus());
 
         while(true){
-            //Click function with points increasing
+        //Click function with points increasing
             clickBtn.addActionListener(new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent event){
                     // costAmount.setText("Upgrade cost: " + (long) g1.getCost());
                     // pointAmount.setText("Points: " + (long) player.getPoints());
                     // multiplier.setText("Points Per Click: "+ (long) player.getClickBonus());
-                    player.click();
+            player.click();
                     pointAmount.setText("Points: " + (long) player.getPoints());
                     costAmount.setText("Upgrade cost: " + (long) g1.getCost());
                     multiplier.setText("Points Per Click: "+ (long) player.getClickBonus());
-                    System.out.println(player.getPoints());
-                }
+            System.out.println(player.getPoints());
+        }
             });
             
             upgradeBtn.addActionListener(new ActionListener(){
@@ -89,5 +85,5 @@ public class main {
             break;
 
         }
-    }
+}
 }
