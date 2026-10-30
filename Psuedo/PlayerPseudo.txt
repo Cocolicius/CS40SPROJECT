@@ -9,3 +9,6 @@ Upgrade(class){
     Desc: multipliers and increase in points per click
      - check if points are enough
 }
+
+umm
+upgrade works and its exponential
