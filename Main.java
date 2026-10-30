@@ -52,11 +52,11 @@ public class Main{
                 player.click();
                 System.out.println(player.getPoints());
             }
-            else if (source == upgradeBtn){
-                 g1.buyUpgrade(player);
+            else if (source == upgradeBtn) g1.buyUpgrade(player);
+                 
             pointAmount.setText("Points: " + player.getPoints());
             costAmount.setText("Upgrade cost: " + g1.getCost());
-            }
+            multiplier.setText("Points Per Click: " + player.getClickBonus());
         };
         clickBtn.addActionListener(listener);
         upgradeBtn.addActionListener(listener);
