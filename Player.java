@@ -1,8 +1,8 @@
 
 public class Player{
 
-    private double points = 0;
-    private double clickBonus = 10.0;
+    private double points = 1;
+    private double clickBonus = 1.0;
     private String clickPower = "";
     private double totalAccum = 0;
 
@@ -15,7 +15,7 @@ public class Player{
         }
         return false;
     }
-    public void upgradeBonus(final double multiplier){clickBonus *= multiplier;}
+    public void upgradeBonus(double level){clickBonus *= Math.pow(1.12,level);}
     public void upgradePower(String power){clickPower = power;}
     public double getPoints(){return points;}
     //Gets total points ever accumulated.

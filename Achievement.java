@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 
 public class Achievement{
     private String achievement;
@@ -21,7 +20,7 @@ public class Achievement{
          if(!unlocked){
             return unlocked = points>=requirement;
          }
-         
+        return false;
     }
 
 /**Reward is adding extra points for certain
