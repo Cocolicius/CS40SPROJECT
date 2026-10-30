@@ -6,7 +6,7 @@ public class Player{
     private String clickPower = "";
     private double totalAccum = 0;
 
-    //Deducts total points.
+    //Deducts total points (if applicable).
     public boolean spend(final double cost){
 
         if (cost <= points){
