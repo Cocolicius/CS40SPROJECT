@@ -2,25 +2,24 @@
 public class Achievement{
     private String achievement;
     private int reward;
-    private final int requirement;
+    private final int requirements;
     private boolean unlocked;
+    private boolean rewardClaimed;
 
-    public Achievement(String a, int required, int r){
-        achievement = a;
-        requirement = required;
-        reward = r;
+    public Achievement(String title, int required, int pointsAdded){
+        achievement = title;
+        requirements = required;
+        reward = pointsAdded;
         unlocked = false;
+        rewardClaimed = false;
     }
 
 /**achievement initially locked and unlocks
  * achievement if clicks meet
  * the requirement
  */
-    public boolean unlockAchievement(int points){
-         if(!unlocked){
-            return unlocked = points>=requirement;
-         }
-        return false;
+    public void checkAchievement(int points){
+         if(!unlocked){unlocked = points>=requirements;}
     }
 
 /**Reward is adding extra points for certain
@@ -28,17 +27,20 @@ public class Achievement{
  * adds a specific amount if
  * unlocked is true
  */
-    public int addReward(){
-        if(unlocked){
+    public int claimReward(){
+        if(unlocked && !rewardClaimed){
+            rewardClaimed = true;
             return reward;
         }
-        else{
-            return 0;
-        }
+        else{return 0;}
     }
     @Override
     public String toString(){
-        return "Title: "+ achievement + "unlocked." + reward + " points added";
+        if(unlocked && rewardClaimed){
+            return achievement + " unlocked " + reward + " points added";
+        }
+        else{return achievement + " locked";}
+        
     }
 /** Displays the title/achievement you get
  * after reaching a certain 
