@@ -2,7 +2,7 @@
 public class Upgrade {
 
     private double cost = 20;
-    private int powerIncrease = 10;
+    private final int powerIncrease = 10;
     private double level = 1;
 
     //buy a multiplicative upgrade

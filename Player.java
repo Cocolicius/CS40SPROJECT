@@ -7,6 +7,7 @@ public class Player{
     private double totalAccum = 0;
 
 
+    
     //Deducts total points (if applicable).
     public boolean spend(final double cost){
 

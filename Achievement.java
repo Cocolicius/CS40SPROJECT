@@ -1,7 +1,7 @@
 
 public class Achievement{
-    private String achievement;
-    private int reward;
+    private final String achievement;
+    private final int reward;
     private final int requirements;
     private boolean unlocked;
     private boolean rewardClaimed;
@@ -19,7 +19,7 @@ public class Achievement{
  * the requirement
  */
     public void checkAchievement(int points){
-         if(!unlocked){unlocked = points>=requirements;}
+         if(!unlocked && points >= requirements){unlocked = true;}
     }
 
 /**Reward is adding extra points for certain
@@ -32,8 +32,15 @@ public class Achievement{
             rewardClaimed = true;
             return reward;
         }
-        else{return 0;}
+        return 0;
     }
+
+    public String getName() { return achievement; }
+    public int getRequirement() { return requirements; }
+    public int getReward() { return reward; }
+    public boolean isUnlocked() { return unlocked; }
+    public boolean isRewardClaimed() { return rewardClaimed; }
+    
     @Override
     public String toString(){
         if(unlocked && rewardClaimed){

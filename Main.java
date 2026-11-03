@@ -29,6 +29,7 @@ public class Main{
         //Jframe
         JFrame frame =  new JFrame();
         frame.setLayout(new FlowLayout());
+        
 
         //Click button
         JButton clickBtn=  new JButton("Click");
@@ -43,13 +44,8 @@ public class Main{
         frame.add(timerBtn);
     
         //Points label
-        JLabel pointAmount = new JLabel("String.format(\"Points: %.2f\", player.getPoints())");
+        JLabel pointAmount = new JLabel(String.format("Points: %.2f", player.getPoints()));
         frame.add(pointAmount);
-
-        //Achievement label
-        JLabel achivementLabel = new JLabel("aaa");
-        achivementLabel.setBounds(20,60,370,30);
-        // frame.add(achivementLabel);
 
         //Cost of Upgrade
         JLabel costAmount = new JLabel(String.format("Upgrade cost: %.2f", g1.getCost()));
@@ -65,9 +61,28 @@ public class Main{
         JLabel pointsPerSecond = new JLabel("Points Per Second: 0");
         frame.add(pointsPerSecond);
 
-        frame.setSize(1280,720);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        // //Achievement label
+        JLabel achivementLabel = new JLabel("aaa");
+        // achivementLabel.setBounds(20,60,370,30);
+        // // frame.add(achivementLabel);
+
+        //Achievement Section
+        JButton achievementsBtn = new JButton("Achievements");
+        frame.add(achievementsBtn);
+
+        //Achievment window
+        JFrame achievementsFrame = new JFrame("Achievements");
+        achievementsFrame.setLayout(new FlowLayout());
+        achievementsFrame.setSize(650, 160);
+        achievementsFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        JLabel achievementLabel = new JLabel("Beginner: 0/10 points - Reward: 25");
+        achievementsFrame.add(achievementLabel);
+        JButton claimBtn = new JButton("Claim Reward");
+        achievementsFrame.add(claimBtn);
+        achievementsBtn.addActionListener(e -> achievementsFrame.setVisible(true));
+        
+
+        
     
         //Click function with points increasing
         ActionListener listener = e ->{
@@ -75,17 +90,23 @@ public class Main{
             if (source == clickBtn){
                 player.click();
                 System.out.println(player.getPoints());
-                beginner.checkAchievement(player.getPointsMemory());
-                pro.checkAchievement(player.getPointsMemory());
-                master.checkAchievement(player.getPointsMemory());
+                // beginner.checkAchievement(player.getPointsMemory());
+                // pro.checkAchievement(player.getPointsMemory());
+                // master.checkAchievement(player.getPointsMemory());
             }
             else if (source == upgradeBtn) g1.buyUpgrade(player);
             else if (source == timerBtn) timerUpgrade.buyUpgrade(player);
-            
+            // else if (source == claimBtn){
+            //     if(!beginner.isRewardClaimed()) player.reward(beginner.claimReward());
+            //     else if(!pro.isRewardClaimed()) player.reward(pro.claimReward());
+            //     else if(!master.isRewardClaimed()) player.reward(master.claimReward());
+            // }
 
-            // player.reward(beginner.claimReward());
-            // player.reward(pro.claimReward());
-            // player.reward(master.claimReward());
+
+            // //check achievements after button press
+            // beginner.checkAchievement(player.getPointsMemory());
+            // pro.checkAchievement(player.getPointsMemory());
+            // master.checkAchievement(player.getPointsMemory());
 
             achivementLabel.setText(
                 beginner.toString() + " | " +
@@ -116,5 +137,9 @@ public class Main{
             }
         });
         timer.start();
+
+        frame.setSize(1280,720);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
